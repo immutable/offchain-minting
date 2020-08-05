@@ -26,13 +26,15 @@ Immutable should send the following request to mint either an ERC721 or ERC20 to
 Immutable should send the following request to burn either an ERC721 or ERC20 token. 
 
 ```
-// POST /gateway/burn?txid=1234
+// POST /burn?txid=1234
 {
     "vault_id": "0x..." // ID of the vault
-    "signature": { // user must sign
+    "signature": { // vault owner must sign
         "r": "",
         "s": ""
     }
 }
 ```
+
+Immutable must implement a custom ERC721 contract which will enable the StarkEx contract to mint tokens after a successful withdrawal. This, like traditional withdrawals, will be a two-step process: a user's withdrawal must first be included in a batch, then either the user must send a final transaction to actually mint the token in the contract. 
 
