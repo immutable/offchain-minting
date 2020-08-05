@@ -31,6 +31,7 @@ Immutable should send the following request to burn either an ERC721 or ERC20 to
 // POST /burn?txid=1234
 {
     "vault_id": "0x..." // ID of the vault
+    "amount": 100, // amount of the token to burn
     "signature": { // vault owner must sign
         "r": "",
         "s": ""
