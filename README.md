@@ -7,6 +7,8 @@ A proposal for the client-side implementation of offchain minting.
 
 The purpose of v1 is to allow us to meet our minting obligations to players. There are two primary state transitions required: minting tokens and burning tokens. 
 
+Only certain token types (whether ERC721 or ERC20) should be available to mint - Immutable should not be able to mint CryptoKitties, for example. Preferably, this would be hard-enforced by the proof. 
+
 Immutable should send the following request to mint either an ERC721 or ERC20 token.
 
 ```
